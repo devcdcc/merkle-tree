@@ -1,5 +1,5 @@
 import scala.annotation.tailrec
-import scala.collection.immutable.Seq
+import scala.collection.Seq
 import java.security.MessageDigest
 
 object FirstExercise {
@@ -12,7 +12,7 @@ object FirstExercise {
       .toSeq
 
   def merkleRootHash(node: Node*): Seq[Byte] =
-    hash(node.foldLeft(Seq.empty[Byte])((acc, current) => acc ++ current.someData))
+    hash(node.flatMap(_.someData))
 
   def main(args: Array[String]): Unit =
     println(merkleRootHash(Node(Seq(1, 1)), Node(Seq(0, 8)), Node(Seq(7, 10)), Node(Seq(2, 3)), Node(Seq(1))))
