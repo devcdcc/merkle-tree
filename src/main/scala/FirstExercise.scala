@@ -10,7 +10,9 @@ object FirstExercise {
       .getInstance("MD5")
       .digest(data.toArray[Byte])
       .toSeq
-  def merkleRootHash(node: Node*): Seq[Byte] = ???
+
+  def merkleRootHash(node: Node*): Seq[Byte] =
+    hash(node.foldLeft(Seq.empty[Byte])((acc, current) => acc ++ current.someData))
 
   def main(args: Array[String]): Unit =
     println(merkleRootHash(Node(Seq(1, 1)), Node(Seq(0, 8)), Node(Seq(7, 10)), Node(Seq(2, 3)), Node(Seq(1))))
