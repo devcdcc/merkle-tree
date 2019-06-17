@@ -1,5 +1,3 @@
-import java.security.MessageDigest
-
 import scala.collection.Seq
 
 object SecondExercise {
