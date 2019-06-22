@@ -18,7 +18,7 @@ object SecondExercise {
     def filter(items: Seq[Int]): Seq[Int] =
       seq.reverse.foldRight(Seq.empty[Int])((element, acc) => if (!items.contains(element)) acc :+ element else acc)
 
-    @inline def map[A](fn: Int => A): Seq[A] = seq.reverse.foldRight(Seq.empty[A])((element, acc) => acc :+ fn(element))
+    def map[A](fn: Int => A): Seq[A] = seq.reverse.foldRight(Seq.empty[A])((element, acc) => acc :+ fn(element))
   }
 
   def main(args: Array[String]): Unit = {
