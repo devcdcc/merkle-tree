@@ -1,10 +1,9 @@
-import SecondExercise.FoldRightContainer
 import org.scalatest._
 
 class SecondExerciseSpec extends FlatSpec with Matchers with OptionValues with Inside with Inspectors {
 
   val seq: scala.collection.Seq[Int] = 1 to 10
-  val subject: FoldRightContainer    = new FoldRightContainer(seq)
+  val subject: SecondExercise        = new SecondExercise(seq)
 
   it should "sum must be equals to Seq.sum" in {
     assert(subject.sum == seq.sum)
