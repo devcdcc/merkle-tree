@@ -1,4 +1,4 @@
-name := "merkle-tree"
+name := "atix-test"
 
 version := "0.1"
 
