@@ -10,7 +10,7 @@ class ThirdExerciseSpec extends FlatSpec with Matchers with OptionValues with In
     val total1: Seq[Int] = strike01 :++ spare02
 
     //when
-    subject.roll(total1: _*)
+    total1.foreach(subject.roll)
     val score: Int = subject.score
 
     //then
@@ -21,7 +21,7 @@ class ThirdExerciseSpec extends FlatSpec with Matchers with OptionValues with In
     val open03   = Seq(9, 0)
 
     //when
-    subject.roll(open03: _*)
+    open03.foreach(subject.roll)
     val score: Int = subject.score
 
     //then
