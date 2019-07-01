@@ -3,14 +3,26 @@ import org.scalatest._
 class ThirdExerciseSpec extends FlatSpec with Matchers with OptionValues with Inside with Inspectors {
 
   var subject = new ThirdExercise()
-  it should "return 20 in first case" in {
+
+  it should "be zero with only a strike" in {
     //given
-    val strike01         = Seq(10)
-    val spare02          = Seq(5, 5)
-    val total1: Seq[Int] = strike01 :++ spare02
+    val strike01 = Seq(10)
 
     //when
-    total1.foreach(subject.roll)
+    strike01.foreach(subject.roll)
+
+    val score: Int = subject.score
+
+    //then
+    assert(score == 0)
+  }
+
+  it should "return 20 in first case" in {
+    //given
+    val spare02 = Seq(5, 5)
+
+    //when
+    spare02.foreach(subject.roll)
     val score: Int = subject.scoreAt(0)
 
     //then
